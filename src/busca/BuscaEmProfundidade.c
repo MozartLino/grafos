@@ -6,15 +6,32 @@ typedef struct NO {
 	struct NO *prox;
 } NO;
 
-void createGrafo() {
-	int grafo[] = { 1, 23, 17, 4, -5, 100 };
-	printf("%d", grafo[1]);
+NO* createGrafo() {
+	NO *array = (NO *) calloc (5, sizeof (NO));
+	int i;
+
+	for (i = 1; i <= 5; ++i) {
+			array[i].aux = i;
+			array[i].prox = NULL;
+	}
+
+	return array;
+}
+
+void buscaEmProfundidade(NO *g){
+	int i;
+
+	for (i = 1; i <= 5; ++i) {
+			printf("%d", g[i].aux);
+	}
 
 }
 
 int main() {
 
-	createGrafo();
+	NO *grafo = createGrafo();
+
+	buscaEmProfundidade(grafo);
 
 	return EXIT_SUCCESS;
 }
