@@ -15,7 +15,7 @@ NO *createNewNO(int valor) {
 }
 
 NO *createGrafo() {
-	NO *array = (NO *) calloc(5, sizeof(NO));
+	NO *array = (NO *) malloc(5 * sizeof(NO));
 
 	NO *p = createNewNO(2);
 	p->prox = createNewNO(3);
